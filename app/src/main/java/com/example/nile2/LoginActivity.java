@@ -2,8 +2,8 @@ package com.example.nile2;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.annotation.NonNull;
+//mport android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,8 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.codingcafe.ecommerce.Model.Users;
-import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import androidx.appcompat.app.AppCompatActivity;
+
+//import com.example.codingcafe.ecommerce.Model.Users;
+//import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.nile2.Model.Users;
+import com.example.nile2.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -117,8 +121,8 @@ public class LoginActivity extends AppCompatActivity
     {
         if(chkBoxRememberMe.isChecked())
         {
-            Paper.book().write(com.example.nile2.Prevalent.UserPhoneKey, phone);
-            Paper.book().write(com.example.nile2.Prevalent.UserPasswordKey, password);
+            Paper.book().write(Prevalent.UserPhoneKey, phone);
+            Paper.book().write(Prevalent.UserPasswordKey, password);
         }
 
 
@@ -152,7 +156,7 @@ public class LoginActivity extends AppCompatActivity
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                com.example.nile2.Prevalent.currentOnlineUser = usersData;
+                                Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }
                         }

@@ -40,7 +40,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity
     private String productRandomKey, downloadImageUrl;
     private StorageReference ProductImagesRef;
     private DatabaseReference ProductsRef;
-    private ProgressDialog loadingBar;
+    //private ProgressDialog loadingBar;
 
 
     @Override
@@ -60,7 +60,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity
         InputProductName = (EditText) findViewById(R.id.product_name);
         InputProductDescription = (EditText) findViewById(R.id.product_description);
         InputProductPrice = (EditText) findViewById(R.id.product_price);
-        loadingBar = new ProgressDialog(this);
+        //loadingBar = new ProgressDialog(this);
 
 
         InputProductImage.setOnClickListener(new View.OnClickListener() {
@@ -138,11 +138,10 @@ public class AdminAddNewProductActivity extends AppCompatActivity
 
     private void StoreProductInformation()
     {
-        loadingBar.setTitle("Add New Product");
-        loadingBar.setMessage("Dear Admin, please wait while we are adding the new product.");
-        loadingBar.setCanceledOnTouchOutside(false);
-        loadingBar.show();
-
+//        loadingBar.setTitle("Add New Product");
+//        loadingBar.setMessage("Dear Admin, please wait while we are adding the new product.");
+//        loadingBar.setCanceledOnTouchOutside(false);
+//        loadingBar.show();
         Calendar calendar = Calendar.getInstance();
 
         SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
@@ -165,7 +164,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity
             {
                 String message = e.toString();
                 Toast.makeText(AdminAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                loadingBar.dismiss();
+                //loadingBar.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -227,12 +226,12 @@ public class AdminAddNewProductActivity extends AppCompatActivity
                             Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
                             startActivity(intent);
 
-                            loadingBar.dismiss();
+                            //loadingBar.dismiss();
                             Toast.makeText(AdminAddNewProductActivity.this, "Product is added successfully..", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
-                            loadingBar.dismiss();
+                            //loadingBar.dismiss();
                             String message = task.getException().toString();
                             Toast.makeText(AdminAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
                         }

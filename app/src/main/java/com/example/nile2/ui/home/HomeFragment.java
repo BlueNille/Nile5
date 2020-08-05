@@ -1,3 +1,4 @@
+/*
 package com.example.nile2.ui.home;
 
 import android.os.Bundle;
@@ -32,4 +33,4 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
-}
+}*/
